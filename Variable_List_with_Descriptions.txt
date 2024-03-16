@@ -7,6 +7,9 @@ CHECKUP1 - About how long has it been since you last visited a doctor for a rout
 EXERANY2 - During the past month, other than your regular job, did you participate in any physical activities or exercises such as running, calisthenics, golf, gardening, or walking for exercise?
 SLEPTIM1 - On average, how many hours of sleep do you get in a 24-hour period?
 RMVTETH4 - Not including teeth lost for injury or orthodontics, how many of your permanent teeth have been removed because of tooth decay or gum disease?
+CVDINFR4 - (Ever told) (you had) a heart attack, also called a myocardial infarction?
+CVDCRHD4 - (Ever told) (you had) angina or coronary heart disease?
+_MICHD - Ever had CHD or MI
 CVDSTRK3 - (Ever told) (you had) a stroke.
 ASTHMA3 - (Ever told) (you had) asthma?
 CHCSCNC1 - (Ever told) (you had) skin cancer that is not melanoma?
@@ -29,7 +32,6 @@ _AGEG5YR - Fourteen-level age category
 HTM4 - Reported height in meters
 WTKG3 - Reported weight in kilograms
 _BMI5 - Body Mass Index (BMI)
-_MICHD - Ever had CHD or MI
 DRNKANY6 - Adults who reported having had at least one drink of alcohol in the past 30 days.
 _AIDTST4 - Adults who have ever been tested for HIV
 FLUSHOT7 - During the past 12 months, have you had either flu vaccine that was sprayed in your nose or flu shot injected into your arm?

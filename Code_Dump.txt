@@ -1,0 +1,58 @@
+# Select only the columns that are important to the analysis, and convert their values to numerical categorical values 
+imbalanced_data = data.copy()
+imbalanced_data[important_cols] = imbalanced_data[important_cols].apply(LabelEncoder().fit_transform)
+imbalanced_data = imbalanced_data[important_cols]
+
+
+
+# (Optional) Remove the duplicate samples from the imbalanced dataset
+imbalanced_data.drop_duplicates(subset=['Had_Heart_Attack',
+                                        'Smoker_Status', 
+                                        'Alcohol_Drinkers',
+                                        'Had_Stroke',
+                                        'Difficulty_Walking',
+                                        'Sex',
+                                        'Age_Category',
+                                        'Race_Ethnicity_Category',
+                                        'Had_Diabetes',
+                                        'Physical_Activities',
+                                        'General_Health',
+                                        'Had_Asthma',
+                                        'Had_Kidney_Disease',
+                                        'Had_Skin_Cancer'], inplace=True)
+
+
+# Split the balanced dataset to a set of training and testing samples 
+x_train, x_test, y_train, y_test = train_test_split(SMOTE_data[['Smoker_Status', 
+                                                    'Alcohol_Drinkers',
+                                                    'Had_Stroke',
+                                                    'Difficulty_Walking',
+                                                    'Sex',
+                                                    'Age_Category',
+                                                    'Race_Ethnicity_Category',
+                                                    'Had_Diabetes',
+                                                    'Physical_Activities',
+                                                    'General_Health',
+                                                    'Had_Asthma',
+                                                    'Had_Kidney_Disease',
+                                                    'Had_Skin_Cancer']], 
+                                                    SMOTE_data['Had_Heart_Attack'], test_size=0.30, random_state=42, stratify=SMOTE_data['Had_Heart_Attack'])
+
+
+
+
+# Split the imbalanced dataset to a set of training and testing samples 
+x_train, x_test, y_train, y_test = train_test_split(imbalanced_data[['Smoker_Status', 
+                                                    'Alcohol_Drinkers',
+                                                    'Had_Stroke',
+                                                    'Difficulty_Walking',
+                                                    'Sex',
+                                                    'Age_Category',
+                                                    'Race_Ethnicity_Category',
+                                                    'Had_Diabetes',
+                                                    'Physical_Activities',
+                                                    'General_Health',
+                                                    'Had_Asthma',
+                                                    'Had_Kidney_Disease',
+                                                    'Had_Skin_Cancer']], 
+                                                    imbalanced_data['Had_Heart_Attack'], test_size=0.20, random_state=42, stratify=imbalanced_data['Had_Heart_Attack'])

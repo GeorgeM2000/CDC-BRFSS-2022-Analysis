@@ -1,1 +1,3 @@
-# CDC-BRFSS-2022-Analysis
+# CDC SMART BRFSS City and Country Data Analysis
+
+This project aims to compare traditional Machine Learning methods for tabular data classification, such as Ensemble methods, Decision Trees, and Naive Bayes, with NLP classification methods like Multinomial Naive Bayes, RNNs, and Transformers. The comparison is conducted after converting tabular data into a text format. We are utilizing survey data from the CDC via the Behavioral Risk Factor Surveillance System (BRFSS), the United States' system for health-related telephone surveys. BRFSS collects state-level data on health-related risk behaviors such as smoking, chronic health conditions such as heart disease and diabetes, and preventive services utilization among U.S. residents.

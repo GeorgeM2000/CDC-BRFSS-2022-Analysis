@@ -56,3 +56,41 @@ x_train, x_test, y_train, y_test = train_test_split(imbalanced_data[['Smoker_Sta
                                                     'Had_Kidney_Disease',
                                                     'Had_Skin_Cancer']], 
                                                     imbalanced_data['Had_Heart_Attack'], test_size=0.20, random_state=42, stratify=imbalanced_data['Had_Heart_Attack'])
+
+
+
+
+# Create an empty list to store rows for the new dataset
+new_dataset_rows = []
+
+# Iterate through each row in the original dataset
+for _, row in dataframes[2].iterrows():
+    sentence_parts = []  # To store parts of the sentence for each row
+    
+    # Iterate through each column in the original dataset
+    for column_name, value in row.items():
+        # Check if the current column is in the descriptions dictionary
+        if column_name in sequences:
+            # Get the description for the current value of the variable
+            description = sequences[column_name].get(value, '')
+            # Add a comma to the end of the description
+            description += ','
+            # Add the description to the sentence parts
+            sentence_parts.append(description)
+        
+        # Check if the current column is the target variable
+        elif column_name == '_MICHD':
+            # Add the target variable's value to the second column of the new dataset
+            classification_value = value
+    
+    # Concatenate the sentence parts into a single sentence
+    sentence = ' '.join(sentence_parts)
+    
+    # Create a new row for the new dataset
+    new_dataset_rows.append({'Sentence': sentence, 'Classification': classification_value})
+
+# Create the new dataset from the list of rows
+text_data = pd.DataFrame(new_dataset_rows)
+
+# Display the new dataset
+print(text_data)

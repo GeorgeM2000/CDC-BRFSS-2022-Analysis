@@ -1,0 +1,4 @@
+1) Can we ignore the variable values that are meaningless to the classification?
+2) Can we include rows that contain null values and ignore the variables with null values?
+3) When we create a corresponding text value for each variable, how do we encode numbers? For example, the number 15,000 may appear in the
+    text representation of multiple variables. How can we say that 15,000 belongs to each variable in a unique way?

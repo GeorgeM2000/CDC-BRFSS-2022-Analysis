@@ -3,3 +3,302 @@
 This file will be used to paste the results
 
 */
+
+
+=== Undersampled dataframe | NLP methods | string values | no negation applied | isotonic | bag of words ===
+
+Multinomial NB ===
+
+Confusion Matrix: 
+[[2740  728]
+ [1139 2329]]
+
+Total Cost: 1867
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.79      0.75      3468
+           1       0.76      0.67      0.71      3468
+
+    accuracy                           0.73      6936
+   macro avg       0.73      0.73      0.73      6936
+weighted avg       0.73      0.73      0.73      6936
+
+
+
+Multi-Variate Bernoulli NB ===
+
+Confusion Matrix: 
+[[2698  770]
+ [1121 2347]]
+
+Total Cost: 1891
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.78      0.74      3468
+           1       0.75      0.68      0.71      3468
+
+    accuracy                           0.73      6936
+   macro avg       0.73      0.73      0.73      6936
+weighted avg       0.73      0.73      0.73      6936
+
+
+Binary NB ===
+
+Confusion Matrix: 
+[[2799  669]
+ [1217 2251]]
+
+Total Cost: 1886
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.70      0.81      0.75      3468
+           1       0.77      0.65      0.70      3468
+
+    accuracy                           0.73      6936
+   macro avg       0.73      0.73      0.73      6936
+weighted avg       0.73      0.73      0.73      6936
+
+=== Undersampled dataframe | NLP methods | string values | no negation applied | isotonic | tf-idf ===
+
+
+Multinomial NB ===
+
+Confusion Matrix: 
+[[2787  681]
+ [1205 2263]]
+
+Total Cost: 1886
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.70      0.80      0.75      3468
+           1       0.77      0.65      0.71      3468
+
+    accuracy                           0.73      6936
+   macro avg       0.73      0.73      0.73      6936
+weighted avg       0.73      0.73      0.73      6936
+
+
+Multi-Variate Bernoulli NB ===
+
+Confusion Matrix: 
+[[2698  770]
+ [1121 2347]]
+
+Total Cost: 1891
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.78      0.74      3468
+           1       0.75      0.68      0.71      3468
+
+    accuracy                           0.73      6936
+   macro avg       0.73      0.73      0.73      6936
+weighted avg       0.73      0.73      0.73      6936
+
+
+Binary NB ===
+
+[[2828  640]
+ [1283 2185]]
+
+Total Cost: 1923
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.69      0.82      0.75      3468
+           1       0.77      0.63      0.69      3468
+
+    accuracy                           0.72      6936
+   macro avg       0.73      0.72      0.72      6936
+weighted avg       0.73      0.72      0.72      6936
+
+
+
+
+
+
+
+
+=== XGBoost ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.82      0.77      3504
+           1       0.79      0.70      0.74      3432
+
+    accuracy                           0.76      6936
+   macro avg       0.76      0.76      0.76      6936
+weighted avg       0.76      0.76      0.76      6936
+
+Confusion Matrix:
+[[2871  633]
+ [1036 2396]]
+Total Cost: 1669
+
+
+
+
+=== DT ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.81      0.77      3504
+           1       0.78      0.69      0.73      3432
+
+    accuracy                           0.75      6936
+   macro avg       0.75      0.75      0.75      6936
+weighted avg       0.75      0.75      0.75      6936
+
+Confusion Matrix:
+[[2838  666]
+ [1057 2375]]
+Total Cost: 1723
+
+
+=== GNB ===
+Confusion Matrix:
+[[2863  641]
+ [1308 2124]]
+
+Total Cost: 1949
+              precision    recall  f1-score   support
+
+           0       0.69      0.82      0.75      3504
+           1       0.77      0.62      0.69      3432
+
+    accuracy                           0.72      6936
+   macro avg       0.73      0.72      0.72      6936
+weighted avg       0.73      0.72      0.72      6936
+
+
+
+
+=== RF ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.82      0.78      3504
+           1       0.79      0.70      0.74      3432
+
+    accuracy                           0.76      6936
+   macro avg       0.76      0.76      0.76      6936
+weighted avg       0.76      0.76      0.76      6936
+
+Confusion Matrix:
+[[2862  642]
+ [1014 2418]]
+Total Cost: 1656
+
+
+=== KNN ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.75      0.74      3504
+           1       0.74      0.71      0.72      3432
+
+    accuracy                           0.73      6936
+   macro avg       0.73      0.73      0.73      6936
+weighted avg       0.73      0.73      0.73      6936
+
+Confusion Matrix:
+[[2635  869]
+ [1011 2421]]
+Total Cost: 1880
+
+
+
+
+=== XGBoost isotonic ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.79      0.77      3504
+           1       0.77      0.72      0.75      3432
+
+    accuracy                           0.76      6936
+   macro avg       0.76      0.76      0.76      6936
+weighted avg       0.76      0.76      0.76      6936
+
+Confusion Matrix:
+[[2783  721]
+ [ 964 2468]]
+Total Cost: 1685
+
+
+=== DT isotonic ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.72      0.83      0.77      3504
+           1       0.80      0.67      0.73      3432
+
+    accuracy                           0.75      6936
+   macro avg       0.76      0.75      0.75      6936
+weighted avg       0.76      0.75      0.75      6936
+
+Confusion Matrix:
+[[2918  586]
+ [1145 2287]]
+Total Cost: 1731
+
+
+
+=== GNB isotonic ===
+Confusion Matrix:
+[[2723  781]
+ [1165 2267]]
+
+Total Cost: 1946
+              precision    recall  f1-score   support
+
+           0       0.70      0.78      0.74      3504
+           1       0.74      0.66      0.70      3432
+
+    accuracy                           0.72      6936
+   macro avg       0.72      0.72      0.72      6936
+weighted avg       0.72      0.72      0.72      6936
+
+
+=== RF isotonic ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.74      0.82      0.78      3504
+           1       0.79      0.70      0.75      3432
+
+    accuracy                           0.76      6936
+   macro avg       0.77      0.76      0.76      6936
+weighted avg       0.77      0.76      0.76      6936
+
+Confusion Matrix:
+[[2879  625]
+ [1018 2414]]
+Total Cost: 1643
+
+
+=== KNN isotonic ===
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.71      0.80      0.75      3504
+           1       0.77      0.67      0.71      3432
+
+    accuracy                           0.74      6936
+   macro avg       0.74      0.74      0.73      6936
+weighted avg       0.74      0.74      0.73      6936
+
+Confusion Matrix:
+[[2809  695]
+ [1137 2295]]
+Total Cost: 1832

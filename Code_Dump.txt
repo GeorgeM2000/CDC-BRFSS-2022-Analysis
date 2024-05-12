@@ -94,3 +94,47 @@ text_data = pd.DataFrame(new_dataset_rows)
 
 # Display the new dataset
 print(text_data)
+
+
+
+
+
+SMOTE_train_data, SMOTE_test_data = train_test_split(SMOTE_data, test_size=0.25, stratify=SMOTE_data['_MICHD'])
+
+
+# Separate the dataframe into minority and majority classes
+minority_df = SMOTE_data[SMOTE_data['_MICHD'] == 0]
+majority_df = SMOTE_data[SMOTE_data['_MICHD'] == 1]
+
+# Split the minority class into training and testing sets
+minority_train, minority_test = train_test_split(minority_df, test_size=0.1)
+
+# Split the majority class into training and testing sets
+majority_train, majority_test = train_test_split(majority_df, test_size=0.3)
+
+# Concatenate the training and testing sets for both classes
+train_set = pd.concat([minority_train, majority_train])
+test_set = pd.concat([minority_test, majority_test])
+
+# Shuffle the rows in the testing set
+test_set = test_set.sample(frac=1)
+
+# Ensure that the testing set does not contain samples from the training set
+test_set = test_set[~test_set.index.isin(train_set.index)]
+
+# Verify the class distribution in the training and testing sets
+print("Training set class distribution:")
+print(train_set['_MICHD'].value_counts())
+print("\nTesting set class distribution:")
+print(test_set['_MICHD'].value_counts())
+
+
+# Generate synthetic data for the original imbalanced data
+resampled_data = BorderlineSMOTE().fit_resample(train_set.drop(columns = ['_MICHD']), 
+                                        train_set['_MICHD'])
+train_set = resampled_data[0]
+train_set[target_column] = resampled_data[1].to_numpy()
+
+
+# Counts for the "Had_CHD_MI" variable
+sns.countplot(data=train_set,x='_MICHD')

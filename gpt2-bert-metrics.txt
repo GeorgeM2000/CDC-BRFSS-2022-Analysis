@@ -1,32 +1,32 @@
 BERT confusion matrix:
-[[2209  591]
- [ 786 1963]]
+[[2901  603]
+ [1086 2346]]
 
-BERT total cost: 2163
+BERT total cost: 1689
 
 BERT classification report:
               precision    recall  f1-score   support
 
-           0       0.74      0.79      0.76      2800
-           1       0.77      0.71      0.74      2749
+           0       0.73      0.83      0.77      3504
+           1       0.80      0.68      0.74      3432
 
-    accuracy                           0.75      5549
-   macro avg       0.75      0.75      0.75      5549
-weighted avg       0.75      0.75      0.75      5549
+    accuracy                           0.76      6936
+   macro avg       0.76      0.76      0.75      6936
+weighted avg       0.76      0.76      0.76      6936
 
 
 GPT2 confusion matrix:
-[[2206  594]
- [ 759 1990]]
+[[2674  830]
+ [ 892 2540]]
 
-GPT2 total cost: 2112
+GPT2 total cost: 1722
 
 GPT2 classification report:
               precision    recall  f1-score   support
 
-           0       0.74      0.79      0.77      2800
-           1       0.77      0.72      0.75      2749
+           0       0.75      0.76      0.76      3504
+           1       0.75      0.74      0.75      3432
 
-    accuracy                           0.76      5549
-   macro avg       0.76      0.76      0.76      5549
-weighted avg       0.76      0.76      0.76      5549
+    accuracy                           0.75      6936
+   macro avg       0.75      0.75      0.75      6936
+weighted avg       0.75      0.75      0.75      6936

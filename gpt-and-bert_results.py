@@ -19,8 +19,13 @@ with open("gpt2_results.json","r") as f:
     gpt2_results = json.load(f) 
 del f
 
-def calc_cost(conf_m,cost_matrix=[[0, 1],[2, 0]]):
-    return np.sum(conf_m*cost_matrix)
+cost_matrix=[
+    [0, 1],
+    [1, 0]
+]
+
+def calc_cost(conf_m):
+    return np.sum(conf_m.T*cost_matrix)
 
 """
 results_showcase(bert_results,"BERT")
@@ -69,4 +74,24 @@ def results_plots(results:dict, model:str):
     plt.grid(color="white")
     plt.legend(loc=4)
     plt.savefig(f"{model.lower()}_roc_curve.png")
+    plt.show()
+
+def combined_calibration_plot():
+    bert_probabilities = [y[1] for y in bert_results['probabilities']]
+    bert_prob_true, bert_prob_pred = calibration_curve(bert_results['labels'], bert_probabilities, n_bins=10)
+    bert_disp = CalibrationDisplay(bert_prob_true, bert_prob_pred, bert_probabilities)
+    
+    gpt2_probabilities = [y[1] for y in gpt2_results['probabilities']]
+    gpt2_prob_true, gpt2_prob_pred = calibration_curve(gpt2_results['labels'], gpt2_probabilities, n_bins=10)
+    gpt2_disp = CalibrationDisplay(gpt2_prob_true, gpt2_prob_pred, gpt2_probabilities)
+    
+    fig = plt.figure(dpi=600)
+    ax = fig.add_subplot(1, 1, 1)
+    ax.set_facecolor('#f0ecf4')
+    plt.grid(color="white")
+    bert_disp.plot(ax=ax,label="BERT model")
+    gpt2_disp.plot(ax=ax,label="GPT2 model")
+    plt.title("Probability Calibration Curve")
+    plt.legend(loc=4)
+    plt.savefig("combined_calibration_curve.png")
     plt.show()

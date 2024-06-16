@@ -1,0 +1,4 @@
+Unnamed: 0,XGBoost,Decision Tree,GaussianNB,Random Forests,KNN,Logistic Regression,Multinomial NB,Multi-variate Bernoulli NB,Binary Multinomial NB
+Total Cost baseline,6458.75,4482.5,9823.5,3740.25,5144.0,11312.75,10506.25,12378.0,11829.25
+Total Cost MEC,4786.25,4074.0,7998.5,3353.25,5144.0,7195.5,7543.75,7645.0,7510.0
+Total Cost weighting,16651.25,7481.75,9823.5,6138.25,3673.25,29552.75,15416.0,15019.0,16749.75
